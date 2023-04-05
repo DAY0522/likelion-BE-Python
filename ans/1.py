@@ -1,6 +1,6 @@
 # 1. 
 
-A,B = input().____()
+A,B = input().split()
 print(A+B)
 
 
