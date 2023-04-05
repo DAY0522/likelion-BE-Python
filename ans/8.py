@@ -2,5 +2,10 @@
 
 a = 10
 b = 0 
-print(a/b)
+try:
+    print(a/b)
+    
+except:
+    print("입력값을 확인해주세요")
+
 
