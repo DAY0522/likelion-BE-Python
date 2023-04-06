@@ -1,22 +1,13 @@
 from googleapiclient.discovery import build
-from konlpy.tag import Okt
-from wordcloud import WordCloud
-from PIL import Image
-import matplotlib.pyplot as plt
-import pprint
 import googleapiclient.discovery
-import os
-
-f = open('./멋사플젝중요.txt','r', encoding='UTF-8')
+from api_key import key
 
 api_service_name = "youtube"
 api_version = "v3"
-DEVELOPER_KEY = f.read()
-
 
 # API 클라이언트 객체 생성
 youtube = googleapiclient.discovery.build(
-    api_service_name, api_version, developerKey=DEVELOPER_KEY)
+    api_service_name, api_version, developerKey=key)
 
 # 가져올 동영상의 ID 입력
 video_id = "MAfpmKrAejs"
@@ -57,15 +48,6 @@ while len(comment_threads) < 100:
     else:
         break
 
-# 최상위 댓글 출력
-for comment_thread in comment_threads:
-    comment = comment_thread["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
-    author = comment_thread["snippet"]["topLevelComment"]["snippet"]["authorDisplayName"]
-    print("작성자:", author)
-    print("내용:", comment)
-    print("----------------------------------------")
-
-
 # 결과 출력
 print("제목:", video_title)
 print("조회수:", view_count)
@@ -74,4 +56,10 @@ print("댓글 수:", comment_count)
 print("설명:", video_description)
 print("채널명:", channel_title)
 
-f.close()
+# 최상위 댓글 출력
+# for comment_thread in comment_threads:
+#     comment = comment_thread["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
+#     author = comment_thread["snippet"]["topLevelComment"]["snippet"]["authorDisplayName"]
+#     print("작성자:", author)
+#     print("내용:", comment)
+#     print("----------------------------------------")
