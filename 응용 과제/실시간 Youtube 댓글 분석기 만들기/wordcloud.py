@@ -13,4 +13,4 @@ gen = wc.generate_from_frequencies(frequency)
 plt.figure()
 plt.imshow(gen)
 
-wc.to_file('법전_워드클라우드.png')
+wc.to_file('words_frequency.png')
