@@ -1,5 +1,6 @@
 from konlpy.tag import Komoran
 from youtube_info import comment_threads
+from konlpy.tag import Okt
 
 # 모든 댓글 저장
 comments = []
@@ -8,11 +9,14 @@ for comment_thread in comment_threads:
     comments.append(comment)
 
 # 형태소 분석
-Komoran = Komoran()
+
+okt = Okt()
+#Komoran = Komoran()
 words = []
 for c in comments:
     try:
-        words += Komoran.nouns(c)
+        words += okt.nouns(c)
+        #words += Komoran.nouns(c)
     except: # nouns 함수 내에서 에러 발생한 경우
         continue
 

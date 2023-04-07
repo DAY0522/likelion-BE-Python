@@ -35,3 +35,15 @@ word_cloud.py(commets_frequency.py의 frequency import)
 원인: 단어구름 생성파일이름을 wordcloud.py 로 이름지었는데 이것이 라이브러리 woldcloud 이름이 같아서 발생하는 문제!
 해결방법: wordcloud.py ->word_cloud.py 로 바꿈 
 
+2. JAVA_HOME 관련 에러 발생(여전히 해결 못함)
+No JVM shared library file (jvm.dll) found. Try setting up the JAVA_HOME environment variable properly.
+해결과정1: 환경변수에 JAVA_HOME 추가 -> 실패
+해결과정2: pype의 jvm을 찾는 코드에서 직접 JDK의 경로를 넣음(직접 JDK 설치 경로를 입력)
+C:\ProgramData\Anaconda3\Lib\site-packages\jpype\_jvmfinder.py 의 _get_from_java_home() 
+-> 또 다른 에러 발생(AttributeError: Java package 'kr.lucypark.okt' is not valid)
+
+3.module '_jpype' has no attribute '_JPackage'. Did you mean: '__package__'? 에러 발생
+해결과정: 재설치... 근데 실패! Java package 'kr.co.shineware.nlp.komoran.core' is not valid
+
+
+
